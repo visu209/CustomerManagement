@@ -1,58 +1,71 @@
 package com.shop.site.model;
 
 import java.util.Date;
+
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class PrdctGrpDetails {
 
-     int PrdctGrpId;
-	
-	String PrdctGrpDesc;
-	
-	Date rowCreDt;
-	
-	Date rowUpdDt;
-	
-	Boolean DelIndc;
+    @Id
+    private String id;
 
-	public Boolean getDelIndc() {
-		return DelIndc;
-	}
+    private int PrdctGrpId;
 
-	public void setDelIndc(Boolean delIndc) {
-		DelIndc = delIndc;
-	}
+    private String PrdctGrpDesc;
 
-	public int getPrdctGrpId() {
-		return PrdctGrpId;
-	}
+    private Date rowCreDt;
 
-	public void setPrdctGrpId(int prdctGrpId) {
-		PrdctGrpId = prdctGrpId;
-	}
+    private Date rowUpdDt;
 
-	public String getPrdctGrpDesc() {
-		return PrdctGrpDesc;
-	}
+    private Boolean DelIndc;
 
-	public void setPrdctGrpDesc(String prdctGrpDesc) {
-		PrdctGrpDesc = prdctGrpDesc;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public Date getRowCreDt() {
-		return rowCreDt;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public void setRowCreDt(Date rowCreDt) {
-		this.rowCreDt = rowCreDt;
-	}
+    public Boolean getDelIndc() {
+        return DelIndc;
+    }
 
-	public Date getRowUpdDt() {
-		return rowUpdDt;
-	}
+    public void setDelIndc(Boolean delIndc) {
+        DelIndc = delIndc;
+    }
 
-	public void setRowUpdDt(Date rowUpdDt) {
-		this.rowUpdDt = rowUpdDt;
-	}
+    public int getPrdctGrpId() {
+        return PrdctGrpId;
+    }
+
+    public void setPrdctGrpId(int prdctGrpId) {
+        PrdctGrpId = prdctGrpId;
+    }
+
+    public String getPrdctGrpDesc() {
+        return PrdctGrpDesc;
+    }
+
+    public void setPrdctGrpDesc(String prdctGrpDesc) {
+        PrdctGrpDesc = prdctGrpDesc;
+    }
+
+    public Date getRowCreDt() {
+        return rowCreDt;
+    }
+
+    public void setRowCreDt(Date rowCreDt) {
+        this.rowCreDt = rowCreDt;
+    }
+
+    public Date getRowUpdDt() {
+        return rowUpdDt;
+    }
+
+    public void setRowUpdDt(Date rowUpdDt) {
+        this.rowUpdDt = rowUpdDt;
+    }
 }

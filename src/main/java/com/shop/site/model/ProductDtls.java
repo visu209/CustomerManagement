@@ -1,69 +1,82 @@
 package com.shop.site.model;
 
 import java.util.Date;
+
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class ProductDtls {
-	
-	int PrdctId;
-	
-	String PrdctDesc;
-	
-	PrdctGrpDetails prdctGrpDetails;
-		
-	Date roeCreDt;
-	
-	Date rowUpdDt;
-	
-	Boolean DelIndc;
 
-	public int getPrdctId() {
-		return PrdctId;
-	}
+    @Id
+    private String id;
 
-	public void setPrdctId(int prdctId) {
-		PrdctId = prdctId;
-	}
+    private int PrdctId;
 
-	public String getPrdctDesc() {
-		return PrdctDesc;
-	}
+    private String PrdctDesc;
 
-	public void setPrdctDesc(String prdctDesc) {
-		PrdctDesc = prdctDesc;
-	}
+    private PrdctGrpDetails prdctGrpDetails;
 
-	public PrdctGrpDetails getPrdctGrpDetails() {
-		return prdctGrpDetails;
-	}
+    private Date rowCreDt;
 
-	public void setPrdctGrpDetails(PrdctGrpDetails prdctGrpDetails) {
-		this.prdctGrpDetails = prdctGrpDetails;
-	}
+    private Date rowUpdDt;
 
-	public Date getRoeCreDt() {
-		return roeCreDt;
-	}
+    private Boolean delIndc;
 
-	public void setRoeCreDt(Date roeCreDt) {
-		this.roeCreDt = roeCreDt;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public Date getRowUpdDt() {
-		return rowUpdDt;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public void setRowUpdDt(Date rowUpdDt) {
-		this.rowUpdDt = rowUpdDt;
-	}
+    public int getPrdctId() {
+        return PrdctId;
+    }
 
-	public Boolean getDelIndc() {
-		return DelIndc;
-	}
+    public void setPrdctId(int prdctId) {
+        PrdctId = prdctId;
+    }
 
-	public void setDelIndc(Boolean delIndc) {
-		DelIndc = delIndc;
-	}
+    public String getPrdctDesc() {
+        return PrdctDesc;
+    }
+
+    public void setPrdctDesc(String prdctDesc) {
+        PrdctDesc = prdctDesc;
+    }
+
+    public PrdctGrpDetails getPrdctGrpDetails() {
+        return prdctGrpDetails;
+    }
+
+    public void setPrdctGrpDetails(PrdctGrpDetails prdctGrpDetails) {
+        this.prdctGrpDetails = prdctGrpDetails;
+    }
+
+    public Date getRoeCreDt() {
+        return rowCreDt;
+    }
+
+    public void setRoeCreDt(Date roeCreDt) {
+        this.rowCreDt = roeCreDt;
+    }
+
+    public Date getRowUpdDt() {
+        return rowUpdDt;
+    }
+
+    public void setRowUpdDt(Date rowUpdDt) {
+        this.rowUpdDt = rowUpdDt;
+    }
+
+    public Boolean getDelIndc() {
+        return delIndc;
+    }
+
+    public void setDelIndc(Boolean delIndc) {
+        this.delIndc = delIndc;
+    }
 
 }
