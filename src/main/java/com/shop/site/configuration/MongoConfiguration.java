@@ -43,8 +43,8 @@ public class MongoConfiguration extends AbstractMongoConfiguration {
 	@Override
 	@Bean
 	public MongoTemplate mongoTemplate() throws Exception{
-		final UserCredentials userCredentials = new UserCredentials("admin", "pG6kZ4BwGXnY");
-		final MongoTemplate mongoTemplate = new MongoTemplate(mongo(), getDatabaseName());
+		final UserCredentials userCredentials = new UserCredentials(System.getenv("OPENSHIFT_MONGODB_DB_USERNAME"), System.getenv("OPENSHIFT_MONGODB_DB_PASSWORD"));
+		final MongoTemplate mongoTemplate = new MongoTemplate(mongo(), getDatabaseName(), userCredentials);
 		mongoTemplate.setWriteConcern(WriteConcern.SAFE);
 		return mongoTemplate;
 	}
