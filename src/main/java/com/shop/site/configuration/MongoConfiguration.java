@@ -11,6 +11,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import com.mongodb.WriteConcern;
 
 @Configuration
@@ -32,11 +33,11 @@ public class MongoConfiguration extends AbstractMongoConfiguration {
 		// ServerAddress serverAddress = new ServerAddress(host, port);
 		// UserCredentials credentials = new
 		// UserCredentials("admin","3KIU2WVJG8lI");
-		return new MongoClient("127.0.0.1");
+		return new MongoClient(new MongoClientURI(System.getenv("OPENSHIFT_MONGODB_DB_URL")));
 	}
 
 	@Override
-	public String getMappingBasePackage() {
+	public String getMappingBasePackage() {	
 		return "com.shop.site.model";
 	}
 	
