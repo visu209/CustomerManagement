@@ -22,17 +22,11 @@ public class MongoConfiguration extends AbstractMongoConfiguration {
 
 	@Override
 	protected String getDatabaseName() {
-		return "shop";
+		return "tomcats";
 	}
 
 	@Override
 	public Mongo mongo() throws Exception {
-		//String host = System.getenv("OPENSHIFT_MONGODB_DB_HOST");
-		//String portString = System.getenv("OPENSHIFT_MONGODB_DB_PORT");
-		//int port = Integer.getInteger(portString);
-		// ServerAddress serverAddress = new ServerAddress(host, port);
-		// UserCredentials credentials = new
-		// UserCredentials("admin","3KIU2WVJG8lI");
 		return new MongoClient(new MongoClientURI(System.getenv("OPENSHIFT_MONGODB_DB_URL")));
 	}
 
